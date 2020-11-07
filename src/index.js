@@ -5,8 +5,8 @@ const httpServer = http.createServer(handleServer);
 function handleServer(req, res) {
   if (req.url === "/welcome") {
     res.statusCode = 200;
-    res.setHeader("Content-Type", "text/plain");
-    //res.writeHead(200).write();
+    res.setHeader("Content", "text/plain");
+
     res.end("Welcome to Dominos!");
   } else if (req.url === "/contact") {
     const obj = {
@@ -14,8 +14,8 @@ function handleServer(req, res) {
       email: "guestcaredominos@jublfood.com"
     };
     res.statusCode = 200;
-    res.setHeader("Content-Type", "application/json");
-    //res.writeHead(200).write(JSON.stringify(obj));
+    res.setHeader("Content", "application/json");
+
     res.end(JSON.stringify(obj));
   } else {
     res.writeHead(404).end("Page not found");
